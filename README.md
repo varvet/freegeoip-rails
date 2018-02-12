@@ -20,7 +20,7 @@ gem "freegeoip-rails", require: "freegeoip"
 Mount the engine in your routes file:
 
 ```ruby
-  mount Freegeoip::Engine, at: "/json"
+mount Freegeoip::Engine, at: "/json"
 ```
 
 Add an initializer like `config/initializers/freegeoip.rb` and tell the engine where it can find your GeoLite2 City database:
