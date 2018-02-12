@@ -41,7 +41,7 @@ Contributions are always welcome.
 
 ## Varvet
 
-Crafted with love at [Varvet](https://www.varvet.com/).
+Crafted with love at [Varvet digital agency](https://www.varvet.com/).
 Skapad med omsorg av [Varvet digital byrå](https://www.varvet.se/).
 
 ## License
