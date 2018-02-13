@@ -8,10 +8,9 @@ Gem::Specification.new do |s|
   s.name        = "freegeoip-rails"
   s.version     = Freegeoip::VERSION
   s.authors     = ["Ingemar"]
-  s.email       = ["ingemar@xox.se"]
-  s.homepage    = "https://varvet.com"
+  s.homepage    = "https://www.varvet.com"
+  s.metadata    = { "source_code_uri" => "https://github.com/varvet/freegeoip-rails" }
   s.summary     = "Rails engine with IP geolocation API like Freegeoip"
-  s.description = "Rails engine that provides an IP geolocation API that ducks with Freegeoip"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
@@ -20,5 +19,4 @@ Gem::Specification.new do |s|
   s.add_dependency "maxminddb"
 
   s.add_development_dependency "rspec-rails", "~> 3.7.2"
-  s.add_development_dependency "pry"
 end
