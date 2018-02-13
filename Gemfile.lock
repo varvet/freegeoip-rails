@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    freegeoip-rails (0.1.0)
+    freegeoip-rails (0.1.1)
       maxminddb
       rails (>= 4.2)
 
