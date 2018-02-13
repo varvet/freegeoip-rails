@@ -1,9 +1,7 @@
 require "rails_helper"
 
-describe Freegeoip::LookupsController do
-  routes { Freegeoip::Engine.routes }
-
-  describe "GET" do
+describe Freegeoip::LookupsController, type: :request do
+  describe "GET /json/:hostname_or_ip" do
     context "OK" do
       before do
         db_response = {
@@ -60,10 +58,11 @@ describe Freegeoip::LookupsController do
           ]
         }
         allow(Freegeoip::Lookup).to receive(:lookup) { db_response }
-
       end
+
+      ## Engine mounted as "/json" in dummy app
       it "returns json" do
-        get :show, params: { hostname_or_ip: "151.101.1.195" }
+        get "/json/151.101.1.195"
 
         json = JSON.parse response.body
         expect(json).to eq({
@@ -84,7 +83,14 @@ describe Freegeoip::LookupsController do
 
     context "Not Found" do
       it "renders 404 not found" do
-        get :show, params: { hostname_or_ip: "foobar" }
+        get "/json"
+
+        expect(response.status).to eq(404)
+        expect(response.body).to eq("404 page not found")
+      end
+
+      it "renders 404 not found" do
+        get "/json/foobar"
 
         expect(response.status).to eq(404)
         expect(response.body).to eq("404 page not found")
